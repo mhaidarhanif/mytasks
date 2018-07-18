@@ -1,3 +1,144 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+input {
+    font-size: 1em;
+    border: none;
+    width: 80%;
+}
+
+input:focus {
+    box-shadow: none;
+}
+
 .container {
     display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+.header {
+    color: #fff;
+    background: #333;
+    padding: 20px 70px;
+    background-image: url("../images/cover.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.header h1 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.header h2 {
+    font-size: 1em;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.task {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    transition: 200ms;
+}
+
+.task:hover {
+    background: hsla(45, 86%, 62%, 0.2);
+}
+
+.task span {
+    font-weight: 700;
+    vertical-align: sub;
+    padding: 10px;
+}
+
+.segment {
+    padding: 20px;
+    margin: 0;
+}
+
+.action {
+    padding: 0;
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.action.marker {
+    color: #ccc;
+    background: none;
+    border: 4px solid #ccc;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.action.marker:focus {
+    outline: none;
+}
+
+.task.incomplete .action.marker::after {
+    content: "✔";
+    color: #fff;
+}
+
+.task.incomplete .action.marker:hover::after {
+    content: "✔";
+    color: #ccc;
+}
+
+.task.complete .action.marker {
+    color: #fff;
+    background: hsla(140, 50%, 50%, 1);
+    border: 2px solid hsla(140, 50%, 50%, 1);
+}
+
+.task.complete .action.marker::after {
+    content: "✔";
+}
+
+.task.complete span {
+    text-decoration: line-through;
+}
+
+.action.add {
+    font-size: 20px;
+    color: blue;
+    border: none;
+    border-radius: 20px;
+}
+
+.action.add::after {
+    content: url("../images/plus.svg");
+    font-weight: 900;
+    color: hsla(190, 100%, 50%, 1);
+}
+
+.segment.add input {
+    transition: 200ms;
+}
+
+.segment.add input:focus {
+    outline: none;
+}
+
+.segment.add input::placeholder {
+    color: hsla(190, 100%, 50%, 1);
+    transition: 200ms;
+}
+
+.segment.add input:focus::placeholder {
+    color: #ccc;
+}
+
+.input.add {
+    padding: 10px;
+    margin: 0;
 }
