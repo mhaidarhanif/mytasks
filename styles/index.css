@@ -192,28 +192,43 @@ svg {
 
 /* -------------------------------------------------------------------------- */
 
+.modal h3 {
+	text-align: center;
+}
+
+.center {
+	justify-content: center;
+}
+
 .form {
 	background: #eee;
-	padding: 20px;
+	padding: 15px;
 	border-radius: 3px;
+	margin: auto;
+	max-width: 400px;
 }
 
 .form-group {
 	margin-bottom: 1rem;
+	max-width: 400px;
 }
 
-.form label {
+.form-group:nth-last-child(1) {
+	margin-bottom: 0;
+}
+
+.form-group label {
 	text-align: left;
-	margin-bottom: 5px;
 	display: inline-block;
 	margin-bottom: .5rem;
 }
 
-.form input {
-	padding: 15px;
+.form-group input {
+	padding: 12px 10px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
-	margin-top: 10px;
+	width: 100%;
+	max-width: 380px;
 }
 
 /* -------------------------------------------------------------------------- */
