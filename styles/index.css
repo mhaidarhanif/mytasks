@@ -2,6 +2,8 @@
 	background: none;
 }
 
+/* -------------------------------------------------------------------------- */
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1.2em;
@@ -22,6 +24,8 @@ svg {
 	fill: currentColor;
 	vertical-align: bottom;
 }
+
+/* -------------------------------------------------------------------------- */
 
 .container {
 	display: flex;
@@ -52,6 +56,19 @@ svg {
 	margin: 20px 0;
 }
 
+.menu {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	transition: 200ms;
+}
+
+.menu:hover {
+	opacity: 0.5;
+}
+
+/* -------------------------------------------------------------------------- */
+
 .task {
 	padding: 20px;
 	border-bottom: 1px solid #ccc;
@@ -64,7 +81,7 @@ svg {
 }
 
 .task span {
-	font-weight: 700;
+	font-weight: 400;
 	vertical-align: sub;
 	margin: 10px;
 }
@@ -94,6 +111,8 @@ svg {
 	outline: none;
 }
 
+/* -------------------------------------------------------------------------- */
+
 .task.incomplete .action.marker::after {
 	content: "✔";
 	color: #fff;
@@ -119,6 +138,8 @@ svg {
 	text-decoration: line-through;
 }
 
+/* -------------------------------------------------------------------------- */
+
 .action.add {
 	font-size: 20px;
 	border: none;
@@ -139,6 +160,10 @@ svg {
 
 .segment.add input {
 	transition: 200ms;
+}
+
+.segment.add input::selection {
+	background: hsla(190, 100%, 50%, 0.2);
 }
 
 .segment.add input:focus {
