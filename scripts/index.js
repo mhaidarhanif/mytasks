@@ -5,7 +5,19 @@ console.log("MyTasks");
 
 // Display date & time
 const today = dayjs(new Date()).format('dddd, D MMMM YYYY H:mm')
-$("#today").text(today)
+$("#today").text(today || "Unknown")
+
+// -----------------------------------------------------------------------------
+// DOM ELEMENTS
+
+const ContainerElement = $("#container")
+const TitleElement = $("#title")
+const DateElement = $("#date")
+const NavElement = $("#nav")
+const AppElement = $("#app")
+const TasksElement = $("#tasks")
+const AddElement = $("#add")
+const AddButtonElement = $("#add-button")
 
 // -----------------------------------------------------------------------------
 // DATA STORAGE
@@ -25,49 +37,85 @@ const setTasks = (tasks) => {
 // -----------------------------------------------------------------------------
 // DATA SEEDER
 
-const seed = (tasks) => {
-    DATA.tasks.push({
-        text: `Action to to`,
+const SEED = {
+    tasks: [{
+        text: `First action to to`,
         created: new Date(),
         complete: false
     }, {
-        text: `Action to to`,
+        text: `Second action to to`,
         created: new Date(),
         complete: true
-    }, {
-        text: `Action to to`,
-        created: new Date(),
-        complete: false
-    })
+    }]
 }
 
-// -----------------------------------------------------------------------------
-// DOM ELEMENTS
-
-const container = $("#container")
-const title = $("#title")
-const date = $("#date")
-const nav = $("#nav")
-const app = $("#app")
-const tasks = $("#tasks")
-const add = $("#add")
-const addButton = $("#add-button")
+const init = (SEED) => {
+    DATA.tasks = SEED.tasks
+}
 
 // -----------------------------------------------------------------------------
 // READ
 
-const read = () => {
+const createElement = (htmlString) => {
+    var div = document.createElement("div");
+    div.innerHTML = htmlString.trim();
+    return div.firstChild;
+}
 
+const createTask = (task, index) => {
+    const status = task.complete ? "complete" : "incomplete"
+
+    return createElement(`
+        <div data-id="task-${index}" class="task ${status}">
+            <button data-id="marker-${index}" class="action marker" title="${task.text}" role="checkbox"></button>
+            <span>${task.text}</span>
+        </div>
+    `)
+}
+
+
+const read = () => {
+    TasksElement.html("")
+    const tasks = getTasks()
+
+    tasks.forEach((task, index) => {
+        const Task = createTask(task, index)
+        TasksElement.append(Task)
+    })
 }
 
 // -----------------------------------------------------------------------------
 // ADD
 
-add.on("submit", (event) => {
+const add = (event) => {
     event.preventDefault()
 
+    const tasks = getTasks()
     const addInput = $("#add-input")
-    const addInputTodo = addInput.val()
-})
+    const addInputTask = addInput.val()
+
+    if (addInputTask) {
+        addInput.val("")
+        tasks.push({
+            text: addInputTask,
+            created: new Date(),
+            complete: false
+        })
+        setTasks(tasks);
+        read();
+    }
+}
 
 // -----------------------------------------------------------------------------
+// LISTENERS
+
+AddElement.on("submit", add)
+
+// -----------------------------------------------------------------------------
+// INITIALIZER
+
+// INITIALIZE SEED DATA
+init(SEED)
+
+// READ ALL DATA
+read()
