@@ -4,7 +4,7 @@
 
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	margin: 0;
 }
 
@@ -32,11 +32,12 @@ svg {
 .header {
 	color: #fff;
 	background: #333;
-	padding: 20px 70px;
+	padding: 10px 30px;
 	background-image: url("../images/cover.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
+	transition: 200ms;
 }
 
 .header h1 {
@@ -65,7 +66,7 @@ svg {
 .task span {
 	font-weight: 700;
 	vertical-align: sub;
-	padding: 10px;
+	margin: 10px;
 }
 
 .segment {
@@ -114,6 +115,7 @@ svg {
 }
 
 .task.complete span {
+	color: #ccc;
 	text-decoration: line-through;
 }
 
@@ -153,6 +155,6 @@ svg {
 }
 
 .input.add {
-	padding: 5px 15px;
+	padding: 8px 15px;
 	margin: 0;
 }
