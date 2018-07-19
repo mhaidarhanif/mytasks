@@ -22,38 +22,44 @@
 
 <body>
 
-    <div class="container-full">
+    <div id="container" class="container-full">
 
         <header class="header cover image">
-            <h1 class="title">MyTasks</h1>
-            <h2 class="date">
+            <h1 id="title" class="title">MyTasks</h1>
+            <h2 id="date" class="date">
                 <date id="today">Wednesday, 18 July 2018</date>
             </h2>
-            <a class="menu" href="account.html">
-                <img src="./images/account.svg" alt="Account">
-            </a>
+            <nav id="nav">
+                <a class="menu" href="account.html">
+                    <img src="./images/account.svg" alt="Account">
+                </a>
+            </nav>
         </header>
 
-        <main class="app">
+        <main id="app" class="app">
 
-            <div class="task incomplete">
-                <button class="action marker" title="Action to do" role="checkbox"></button>
-                <span>Action to do</span>
+            <div id="tasks" class="tasks">
+
+                <div class="task incomplete">
+                    <button class="action marker" title="Action to do" role="checkbox"></button>
+                    <span>Action to do</span>
+                </div>
+
+                <div class="task complete">
+                    <button class="action marker" title="Action to do" role="checkbox"></button>
+                    <span>Action to do</span>
+                </div>
+
+                <div class="task incomplete">
+                    <button class="action marker" title="Action to do" role="checkbox"></button>
+                    <span>Action to do</span>
+                </div>
+
             </div>
 
-            <div class="task complete">
-                <button class="action marker" title="Action to do" role="checkbox"></button>
-                <span>Action to do</span>
-            </div>
-
-            <div class="task incomplete">
-                <button class="action marker" title="Action to do" role="checkbox"></button>
-                <span>Action to do</span>
-            </div>
-
-            <form class="segment add">
-                <input class="insert add" type="text" placeholder="What do you want to do?">
-                <button class="action add" type="button" title="Action to do" role="checkbox"></button>
+            <form id="add" class="segment add">
+                <input id="add-input" class="insert add" type="text" placeholder="What do you want to do?">
+                <button id="add-button" class="action add" type="submit" title="Action to do" role="checkbox"></button>
             </form>
 
         </main>
