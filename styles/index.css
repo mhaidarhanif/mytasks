@@ -27,7 +27,7 @@ svg {
 
 /* -------------------------------------------------------------------------- */
 
-.container {
+.container-full {
 	display: flex;
 	flex-direction: column;
 	color: #333;
@@ -160,32 +160,57 @@ svg {
 	transition: 200ms;
 }
 
-.segment.add input:focus~.action.add::after {
+.segment.add .insert:focus~.action.add::after {
 	content: url("../images/plus-gray.svg");
 }
 
-.segment.add input {
+.segment.add .insert {
 	transition: 200ms;
 }
 
-.segment.add input::selection {
+.segment.add .insert::selection {
 	background: hsla(190, 100%, 50%, 0.2);
 }
 
-.segment.add input:focus {
+.segment.add .insert:focus {
 	outline: none;
 }
 
-.segment.add input::placeholder {
+.segment.add .insert::placeholder {
 	color: hsla(190, 100%, 50%, 1);
 	transition: 200ms;
 }
 
-.segment.add input:focus::placeholder {
+.segment.add .insert:focus::placeholder {
 	color: #ccc;
 }
 
-.input.add {
+.segment.add .insert.add {
 	padding: 8px 15px;
 	margin: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.button {
+	font-size: 16px;
+	font-weight: 700;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 2px;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button.primary {
+	color: #fff;
+	background: hsla(200, 100%, 50%, 1)
+}
+
+.button.help {
+	color: #ccc;
+	background: none;
+	border: none;
 }

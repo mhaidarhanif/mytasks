@@ -23,7 +23,7 @@
 
 <body>
 
-    <div class="container">
+    <div class="container-full">
 
         <header class="header cover default">
             <h1 class="title">Account</h1>
@@ -34,12 +34,21 @@
 
         <main class="app">
 
-            <div class="row">
-                <div class="col-xs-12
-                            col-sm-8
-                            col-md-6
-                            col-lg-4">
-                    <div class="box">Responsive</div>
+            <div class="row center-xs">
+                <div class="col-xs-4">
+                    <form>
+                        <h3>Register</h3>
+                        <div class="form-group">
+                            <label for="register-email">Email:</label>
+                            <input class="input" type="email" class="form-control" id="register-email" placeholder="yourname@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password:</label>
+                            <input class="input" type="password" class="form-control" id="register-password" placeholder="password">
+                        </div>
+                        <button class="button primary" type="submit">Register</button>
+                        <button class="button help" type="button">Activate Account</button>
+                    </form>
                 </div>
             </div>
 
