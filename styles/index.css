@@ -35,13 +35,19 @@ svg {
 
 .header {
 	color: #fff;
-	background: #333;
 	padding: 10px 30px;
+	transition: 200ms;
+}
+
+.cover {
+	background: #333;
+}
+
+.cover.image {
 	background-image: url("../images/cover.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
-	transition: 200ms;
 }
 
 .header h1 {
