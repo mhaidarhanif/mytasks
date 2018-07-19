@@ -192,12 +192,41 @@ svg {
 
 /* -------------------------------------------------------------------------- */
 
+.form {
+	background: #eee;
+	padding: 20px;
+	border-radius: 3px;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+}
+
+.form label {
+	text-align: left;
+	margin-bottom: 5px;
+	display: inline-block;
+	margin-bottom: .5rem;
+}
+
+.form input {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-top: 10px;
+}
+
+/* -------------------------------------------------------------------------- */
+
 .button {
 	font-size: 16px;
 	font-weight: 700;
 	padding: 10px 20px;
 	border: none;
-	border-radius: 2px;
+	border-radius: 3px;
+	transition: 200ms;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 .button:focus {
@@ -206,11 +235,19 @@ svg {
 
 .button.primary {
 	color: #fff;
-	background: hsla(200, 100%, 50%, 1)
+	background: hsla(200, 80%, 50%, 1)
+}
+
+.button.primary:hover {
+	background: hsla(200, 80%, 60%, 1)
 }
 
 .button.help {
 	color: #ccc;
 	background: none;
 	border: none;
+}
+
+.button.help:hover {
+	color: #aaa;
 }
