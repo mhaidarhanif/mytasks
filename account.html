@@ -18,18 +18,24 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
     <link rel="stylesheet" href="styles/flexboxgrid.min.css">
+    <link rel="stylesheet" href="styles/animate.min.css">
     <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
 
-    <div class="container-full">
+    <div id="container" class="container-full animated fadeIn">
 
         <header class="header cover default">
             <h1 class="title">Account</h1>
-            <a class="menu" href="index.html">
-                <img src="./images/task.svg" alt="Tasks" title="Tasks">
-            </a>
+            <nav id="nav" class="nav">
+                <a class="menu" href="index.html">
+                    <p class="nav-content">
+                        <span class="email">haidar@impactbyte.com</span>
+                        <img class="menu-image" src="./images/task.svg" alt="Tasks" title="Tasks">
+                    </p>
+                </a>
+            </nav>
         </header>
 
         <main class="app">
