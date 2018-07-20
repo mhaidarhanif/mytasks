@@ -20,22 +20,11 @@ const AddElement = $("#add")
 const AddButtonElement = $("#add-button")
 
 // -----------------------------------------------------------------------------
-// DATA STORAGE
+// DATA STORAGE & SEEDER
 
 let DATA = {
     tasks: []
 }
-
-const getTasks = () => {
-    return DATA.tasks
-}
-
-const setTasks = (tasks) => {
-    DATA.tasks = tasks
-}
-
-// -----------------------------------------------------------------------------
-// DATA SEEDER
 
 const SEED = {
     tasks: [{
@@ -53,11 +42,19 @@ const init = (SEED) => {
     DATA.tasks = SEED.tasks
 }
 
+const getTasks = () => {
+    return DATA.tasks
+}
+
+const setTasks = (tasks) => {
+    DATA.tasks = tasks
+}
+
 // -----------------------------------------------------------------------------
 // READ
 
 const createElement = (htmlString) => {
-    var div = document.createElement("div");
+    let div = document.createElement("div");
     div.innerHTML = htmlString.trim();
     return div.firstChild;
 }
