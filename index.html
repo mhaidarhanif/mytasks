@@ -25,10 +25,10 @@
 
     <div id="container" class="container-full animated fadeIn">
 
-        <header class="header cover image">
+        <header id="header" class="header cover image">
             <h1 id="title" class="title">MyTasks</h1>
             <h2 id="date" class="date">
-                <date id="today">Wednesday, 18 July 2018</date>
+                <span id="today">Wednesday, 18 July 2018</span>
             </h2>
             <nav id="nav" class="nav">
                 <a class="menu" href="account.html">
@@ -49,8 +49,8 @@
             </div>
 
             <form id="add" class="segment add" autocomplete="off">
-                <input id="add-input" class="insert add" type="text" placeholder="What do you want to do?">
-                <button id="add-button" class="action add" type="submit" title="Action to do" role="checkbox"></button>
+                <input id="add-input" class="insert add" type="text" placeholder="What do you want to do?" autofocus>
+                <button id="add-button" class="action add" type="submit" title="Action to do" role="checkbox" aria-checked="false"></button>
             </form>
 
         </main>
